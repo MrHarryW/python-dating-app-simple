@@ -134,7 +134,7 @@ print("\n\nNow that we have your age groups sorted here are a few more questions
 
 preferedGender = input("Would you like to date a male or a female? ")
 
-firsDateLocation = input("Where would you like to take someone on your first date with them? ")
+firstDateLocation = input("Where would you like to take someone on your first date with them? ")
 
 print("\n\nHere is your current profile and interests:"\n\n)
 
