@@ -19,7 +19,7 @@ def validate_login(username, password):
     data = load_data()
     for user in data["users"]:
         if user["username"] == username and user["password"] == password:
-            return user  # Return the entire saved user object
+            return user 
     return None
 
 def save_user(username, password, profile):
