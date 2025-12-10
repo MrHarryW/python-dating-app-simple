@@ -101,5 +101,134 @@ print("Ethnicity:", ethnicity)
 print("Occupation:", occupation)
 print("Favoured Holiday Destinations:", *holidayDestinations)
 
+print("\n\nNow on to a few more questions so that we can finish setting up your profile.\n\n")
 
+favouriteActivities = []
+for i in range(3):
+  activity = input("Please enter one of your three favourite activities to partake in: ")
+  favouriteActivities.append(activity)
+print("\nYou have chosen:")
+for x in range(len(favouriteActivities)):
+  print(favouriteActivities[x])
 
+fiveThings = []
+for i in range(5):
+  thing = input("Please enter one of the five things you cannot live without: ")
+  fiveThings.append(thing)
+print("\nYou have chosen:")
+for x in range(len(fiveThings)):
+  print(fiveThings[x])
+
+print("\n\nNow that we have finished your profile, lets see what you are interested in.\n\n")
+
+minimumAge = int(input("What is the youngest age you would be interested in? "))
+if minimumAge < 18:
+  print("Please note that we cannot allow people of this age on the app and therefore cannot recommend this age group.")
+  minimumAge = 18
+maximumAge = int(input("What is the oldest age you would be interested in? "))
+if maximumAge > 25:
+  print("Please note that we do not have any users above 25.")
+  maximumAge = 25
+
+print("\n\nNow that we have your age groups sorted here are a few more questions.\n\n")
+
+preferedGender = input("Would you like to date a male or a female? ")
+
+firsDateLocation = input("Where would you like to take someone on your first date with them? ")
+
+print("\n\nHere is your current profile and interests:"\n\n)
+
+print("Profile:")
+print("Name:", name)
+print("Age:", age)
+print("Height:", height)
+print("Hair Colour:", hairColour)
+print("Ethnicity:", ethnicity)
+print("Occupation:", occupation)
+print("Favoured Holiday Destinations:", *holidayDestinations)
+print("Favoured Activities:", *favouriteActivities)
+print("Five Things You Cannot Live Without:", *fiveThings)
+print("Interests:")
+print("Gender:", preferedGender)
+print("Pefered age range for partner is:", minimumAge + "-" + maximumAge)
+print("First Date Location:", firstDateLocation)
+
+print("\n\nHere are a few funny questions to add to your profile to make people smile.\n\n")
+
+print("We are going to create a joke, please select either a dog or cat.")
+animal = input("")
+if animal.lower() == "dog":
+  print("What do you call a dog that is also a magician? - A labra-cadabra-dor!")
+elif animal.lower() == "cat":
+  print("What do you call a cat that works in business? - A purrfessional!")
+else:
+  print("You did nto select either of the options so you do not get a joke.")
+
+amountOfMaltesers = int(input("\nHow many maltesers can you fit in your mouth? "))
+if amountOfMaltesers <= 10:
+  print("Good Job!")
+elif amountOfMaltesers > 10:
+  print("You Need Help.")
+
+seeProfile = input("Would you like to see your final profile?")
+if seeProfile.lower() == 'yes':
+  print("Profile:")
+  print("Name:", name)
+  print("Age:", age)
+  print("Height:", height)
+  print("Hair Colour:", hairColour)
+  print("Ethnicity:", ethnicity)
+  print("Occupation:", occupation)
+  print("Favoured Holiday Destinations:", *holidayDestinations)
+  print("Favoured Activities:", *favouriteActivities)
+  print("Five Things You Cannot Live Without:", *fiveThings)
+  print("Interests:")
+  print("Gender:", preferedGender)
+  print("Pefered age range for partner is:", minimumAge + "-" + maximumAge)
+  print("First Date Location:", firstDateLocation)
+  print("Jokes/Amusing Section:")
+  print(name, "selected", animal.lower())
+  print(name, "can fit", amountOfMaltesers, "in there mouth.")
+
+potentialFemalePartners = [
+  ["Alice", 25, "London"],
+  ["Janet", 21, "Dartford"],
+  ["Rosie", 19, "Cambridge"]
+]
+
+potentialMalePartners = [
+  ["James", 25, "Oxford"],
+  ["John", 22, "London"],
+  ["Arham", 19, "Dartford"]
+]
+
+if preferedGender.lower() == 'male':
+  print("\n\nSince you chose male as your prefered gender here are our available candidates:")
+  for i in potentialMalePartners:
+    print(i[0])
+  print("Please note some of these may be out of your age range, but out algorithm has selected them as a good match for you.")
+  chosenPartner = input("Please name your chosen candidate: ")
+  for option in potentialMalePartners:
+    if option[0] == chosenPartner:
+      print(*option)
+    else:
+      print("Sorry this user is not in our database.")
+elif preferedGender.lower() == 'female':
+  print("\n\nSince you chose female as your prefered gender here are our available candidates:")
+  for i in potentialFemalePartners:
+    print(i[0])
+  print("Please note some of these may be out of your age range, but out algorithm has selected them as a good match for you.")
+  chosenPartner = input("Please name your chosen candidate: ")
+  for option in potentialFemalePartners:
+    if option[0] == chosenPartner:
+      print(*option)
+    else:
+      print("Sorry this user is not in our database.")  
+
+  daysOfTheWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] 
+  randomDay = random.choice(daysOfTheWeek)
+  print("\nIf you found a user the best day for the date is", randomDay)
+
+  print("\n\nThank you for using Harry's Dating App!")
+
+  break
