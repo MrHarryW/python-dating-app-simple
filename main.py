@@ -1,4 +1,5 @@
 import time 
+import random
 
 print("\n////////////////////\nInitiating Dating App\n////////////////////\n") 
 time.sleep(3)
@@ -136,7 +137,7 @@ preferedGender = input("Would you like to date a male or a female? ")
 
 firstDateLocation = input("Where would you like to take someone on your first date with them? ")
 
-print("\n\nHere is your current profile and interests:"\n\n)
+print("\n\nHere is your current profile and interests:\n\n")
 
 print("Profile:")
 print("Name:", name)
@@ -150,7 +151,7 @@ print("Favoured Activities:", *favouriteActivities)
 print("Five Things You Cannot Live Without:", *fiveThings)
 print("Interests:")
 print("Gender:", preferedGender)
-print("Pefered age range for partner is:", minimumAge + "-" + maximumAge)
+print("Pefered age range for partner is:", str(minimumAge) + "-" + str(maximumAge))
 print("First Date Location:", firstDateLocation)
 
 print("\n\nHere are a few funny questions to add to your profile to make people smile.\n\n")
@@ -184,7 +185,7 @@ if seeProfile.lower() == 'yes':
   print("Five Things You Cannot Live Without:", *fiveThings)
   print("Interests:")
   print("Gender:", preferedGender)
-  print("Pefered age range for partner is:", minimumAge + "-" + maximumAge)
+  print("Pefered age range for partner is:", str(minimumAge) + "-" + str(maximumAge))
   print("First Date Location:", firstDateLocation)
   print("Jokes/Amusing Section:")
   print(name, "selected", animal.lower())
@@ -221,14 +222,10 @@ elif preferedGender.lower() == 'female':
   chosenPartner = input("Please name your chosen candidate: ")
   for option in potentialFemalePartners:
     if option[0] == chosenPartner:
-      print(*option)
-    else:
-      print("Sorry this user is not in our database.")  
+      print(*option) 
 
   daysOfTheWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] 
   randomDay = random.choice(daysOfTheWeek)
   print("\nIf you found a user the best day for the date is", randomDay)
 
   print("\n\nThank you for using Harry's Dating App!")
-
-  break
